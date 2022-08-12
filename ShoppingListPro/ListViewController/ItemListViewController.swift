@@ -20,14 +20,7 @@ class ItemListViewController: UICollectionViewController {
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
         
-        let cellRegistration = UICollectionView.CellRegistration { [weak self] (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
-            guard let weakSelf = self else { return }
-            
-            let item = weakSelf.items[indexPath.item]
-            var contentConfig = cell.defaultContentConfiguration()
-            contentConfig.text = item.name
-            cell.contentConfiguration = contentConfig
-        }
+        let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         
         dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
