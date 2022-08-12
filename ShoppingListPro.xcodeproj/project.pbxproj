@@ -66,8 +66,7 @@
 				1324B44428A3E7A000D46D1A /* AppDelegate.swift */,
 				1324B44628A3E7A000D46D1A /* SceneDelegate.swift */,
 				1324B44828A3E7A000D46D1A /* ListsViewController.swift */,
-				13698FEC28A65094006A22C2 /* ItemListViewController.swift */,
-				13698FF128A65D0A006A22C2 /* ItemListViewController+DataSource.swift */,
+				13698FF328A668C6006A22C2 /* ListViewController */,
 				1324B44A28A3E7A000D46D1A /* Main.storyboard */,
 				1324B44D28A3E7A100D46D1A /* Assets.xcassets */,
 				1324B44F28A3E7A100D46D1A /* LaunchScreen.storyboard */,
@@ -82,6 +81,15 @@
 				13698FEF28A65631006A22C2 /* Item.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		13698FF328A668C6006A22C2 /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				13698FEC28A65094006A22C2 /* ItemListViewController.swift */,
+				13698FF128A65D0A006A22C2 /* ItemListViewController+DataSource.swift */,
+			);
+			path = ListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
