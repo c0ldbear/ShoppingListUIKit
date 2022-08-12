@@ -14,6 +14,7 @@
 		1324B44E28A3E7A100D46D1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1324B44D28A3E7A100D46D1A /* Assets.xcassets */; };
 		1324B45128A3E7A100D46D1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1324B44F28A3E7A100D46D1A /* LaunchScreen.storyboard */; };
 		13698FED28A65094006A22C2 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13698FEC28A65094006A22C2 /* ItemListViewController.swift */; };
+		13698FF028A65631006A22C2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13698FEF28A65631006A22C2 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1324B45028A3E7A100D46D1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1324B45228A3E7A100D46D1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13698FEC28A65094006A22C2 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		13698FEF28A65631006A22C2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		1324B44328A3E7A000D46D1A /* ShoppingListPro */ = {
 			isa = PBXGroup;
 			children = (
+				13698FEE28A65628006A22C2 /* Models */,
 				1324B44428A3E7A000D46D1A /* AppDelegate.swift */,
 				1324B44628A3E7A000D46D1A /* SceneDelegate.swift */,
 				1324B44828A3E7A000D46D1A /* ListsViewController.swift */,
@@ -68,6 +71,14 @@
 				1324B45228A3E7A100D46D1A /* Info.plist */,
 			);
 			path = ShoppingListPro;
+			sourceTree = "<group>";
+		};
+		13698FEE28A65628006A22C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13698FEF28A65631006A22C2 /* Item.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1324B44928A3E7A000D46D1A /* ListsViewController.swift in Sources */,
+				13698FF028A65631006A22C2 /* Item.swift in Sources */,
 				1324B44528A3E7A000D46D1A /* AppDelegate.swift in Sources */,
 				13698FED28A65094006A22C2 /* ItemListViewController.swift in Sources */,
 				1324B44728A3E7A000D46D1A /* SceneDelegate.swift in Sources */,
