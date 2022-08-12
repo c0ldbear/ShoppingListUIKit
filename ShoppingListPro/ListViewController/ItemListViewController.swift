@@ -30,6 +30,12 @@ class ItemListViewController: UICollectionViewController {
         collectionView.dataSource = dataSource
     }
     
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let id = items[indexPath.item].id
+        showItemDetail(for: id)
+        return false
+    }
+    
     private func listLayout() -> UICollectionViewCompositionalLayout {
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
         listConfiguration.showsSeparators = true // Default is true, but want it here to know that this is possible to change
@@ -42,6 +48,12 @@ class ItemListViewController: UICollectionViewController {
         snapshot.appendSections([0])
         snapshot.appendItems(items.map { $0.id })
         dataSource.apply(snapshot)
+    }
+    
+    func showItemDetail(for id: Item.ID) {
+        let item = item(for: id)
+        let viewController = ItemDetailViewController(item: item)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
