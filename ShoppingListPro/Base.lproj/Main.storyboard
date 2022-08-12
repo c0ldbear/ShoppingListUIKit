@@ -41,14 +41,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9Cg-Em-SEM"/>
-                        <segue destination="7lf-Ua-dbi" kind="relationship" relationship="viewControllers" id="FPJ-W4-D2V"/>
+                        <segue destination="g9B-G0-cQt" kind="relationship" relationship="viewControllers" id="FPJ-W4-D2V"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fU-e9-u4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--Items-->
+        <!--Item List View Controller-->
         <scene sceneID="zkt-a5-D4o">
             <objects>
                 <collectionViewController id="7lf-Ua-dbi" customClass="ItemListViewController" customModule="ShoppingListPro" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,13 +77,32 @@
                             <outlet property="delegate" destination="7lf-Ua-dbi" id="jOr-G9-Nje"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Items" image="square.filled.on.square" catalog="system" id="MrN-XM-3XZ">
-                        <imageReference key="selectedImage" image="square.filled.on.square" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="n0T-bv-uI8"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQi-BX-8gx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="913"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="912.72321428571422"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="6In-1h-WcX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9B-G0-cQt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Items" image="square.filled.on.square" catalog="system" id="MrN-XM-3XZ">
+                        <imageReference key="selectedImage" image="square.filled.on.square" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OQC-FM-5ZH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7lf-Ua-dbi" kind="relationship" relationship="rootViewController" id="tRK-k2-Q4L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6f8-LS-N8l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="912.72321428571422"/>
         </scene>
     </scenes>
     <resources>
