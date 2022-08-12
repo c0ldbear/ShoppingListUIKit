@@ -9,6 +9,8 @@ import UIKit
 
 class ItemListViewController: UICollectionViewController {
     
+    var items = Item.sampleData
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
