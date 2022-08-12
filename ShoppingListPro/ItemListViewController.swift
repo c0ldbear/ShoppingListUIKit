@@ -9,11 +9,32 @@ import UIKit
 
 class ItemListViewController: UICollectionViewController {
     
+    var items = Item.sampleData
+    var dataSource: DataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemPurple
-        listLayout()
+        
+        let listLayout = listLayout()
+        collectionView.collectionViewLayout = listLayout
+        
+        let cellRegistration = UICollectionView.CellRegistration { [weak self] (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
+            guard let weakSelf = self else { return }
+            
+            let item = weakSelf.items[indexPath.item]
+            var contentConfig = cell.defaultContentConfiguration()
+            contentConfig.text = item.name
+            cell.contentConfiguration = contentConfig
+        }
+        
+        dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
+            return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+        }
+        
+        updateSnapshot()
+        collectionView.dataSource = dataSource
     }
     
     private func listLayout() -> UICollectionViewCompositionalLayout {
@@ -21,5 +42,12 @@ class ItemListViewController: UICollectionViewController {
         listConfiguration.showsSeparators = true
         listConfiguration.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
         return UICollectionViewCompositionalLayout.list(using: listConfiguration)
+    }
+    
+    private func updateSnapshot() {
+        var snapshot = Snapshot()
+        snapshot.appendSections([0])
+        snapshot.appendItems(Item.sampleData.map { $0.name })
+        dataSource.apply(snapshot)
     }
 }
