@@ -49,7 +49,6 @@ class ItemDetailViewController: UICollectionViewController {
     func text(for row: Row) -> String? {
         switch row {
         case .viewName: return item.name
-        default: return nil
         }
     }
     
