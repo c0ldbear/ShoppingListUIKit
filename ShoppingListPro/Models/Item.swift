@@ -7,8 +7,18 @@
 
 import Foundation
 
-struct Item {
+struct Item: Identifiable {
+    var id: String = UUID().uuidString
     var name: String
+}
+
+extension Array where Element == Item {
+    func indexOf(for id: Item.ID) -> Self.Index {
+        guard let index = firstIndex(where: {$0.id == id }) else {
+            fatalError()
+        }
+        return index
+    }
 }
 
 #if DEBUG
