@@ -26,9 +26,14 @@ class ItemListViewController: UICollectionViewController {
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
+        setupNavigationItems()
+        
         updateSnapshot()
         collectionView.dataSource = dataSource
     }
+    
+    @objc func lol() { print("TITLE button") }
+    @objc func rightLol() { print("RIGHT button") }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         let id = items[indexPath.item].id
@@ -39,7 +44,7 @@ class ItemListViewController: UICollectionViewController {
     private func listLayout() -> UICollectionViewCompositionalLayout {
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
         listConfiguration.showsSeparators = true // Default is true, but want it here to know that this is possible to change
-        listConfiguration.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        listConfiguration.backgroundColor = UIColor(red: 0.05, green: 1, blue: 0, alpha: 0.05)
         return UICollectionViewCompositionalLayout.list(using: listConfiguration)
     }
     
@@ -54,6 +59,31 @@ class ItemListViewController: UICollectionViewController {
         let item = item(for: id)
         let viewController = ItemDetailViewController(item: item)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    private func setupNavigationItems() {
+        // Left side
+        navigationItem.leftBarButtonItem = editButtonItem
+        
+        // Title (middle)
+//        let titleButton = UIButton(type: .custom)
+//        titleButton.setImage(UIImage(systemName: "rectangle.stack"), for: .normal)
+//        titleButton.addTarget(self, action: #selector(lol), for: .touchUpInside)
+//        titleButton.clipsToBounds = true
+//        titleButton.layer.cornerRadius = 4
+//        titleButton.sizeToFit()
+//        navigationItem.titleView = titleButton
+        navigationItem.title = "Items"
+        
+        // Right side
+        let rightButton = UIButton(type: .custom)
+        rightButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        rightButton.addTarget(self, action: #selector(rightLol), for: .touchUpInside)
+        rightButton.clipsToBounds = true
+        rightButton.layer.cornerRadius = 4
+        rightButton.sizeToFit()
+        let rightButtonItem = UIBarButtonItem(customView: rightButton)
+        navigationItem.rightBarButtonItem = rightButtonItem
     }
     
 }

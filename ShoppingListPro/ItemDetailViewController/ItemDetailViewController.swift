@@ -19,6 +19,7 @@ class ItemDetailViewController: UICollectionViewController {
         
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
+        listConfiguration.backgroundColor = UIColor(red: 0.78, green: 1, blue: 0.93, alpha: 1)
         let listLayout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
 
         super.init(collectionViewLayout: listLayout)
@@ -35,6 +36,8 @@ class ItemDetailViewController: UICollectionViewController {
         dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Row) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
+        
+        
         updateSnapshot()
     }
     
@@ -43,7 +46,6 @@ class ItemDetailViewController: UICollectionViewController {
         contentConfig.text = text(for: row)
         contentConfig.textProperties.font = UIFont.preferredFont(forTextStyle: row.textStyle)
         cell.contentConfiguration = contentConfig
-        cell.tintColor = .systemCyan
     }
     
     func text(for row: Row) -> String? {
