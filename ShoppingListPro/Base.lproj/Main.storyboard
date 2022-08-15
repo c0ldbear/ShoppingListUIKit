@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lists-->
+        <!--Lists View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ListsViewController" customModule="ShoppingListPro" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,14 +20,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Lists" id="gzJ-me-BL7">
-                        <imageReference key="image" image="star.fill" catalog="system" symbolScale="default"/>
-                        <imageReference key="selectedImage" image="star.fill" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="jmt-N2-6Ma"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eeK-TY-KZj">
@@ -40,7 +37,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9Cg-Em-SEM"/>
+                        <segue destination="ta3-YW-P1g" kind="relationship" relationship="viewControllers" id="9Cg-Em-SEM"/>
                         <segue destination="g9B-G0-cQt" kind="relationship" relationship="viewControllers" id="FPJ-W4-D2V"/>
                     </connections>
                 </tabBarController>
@@ -103,6 +100,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6f8-LS-N8l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="912.72321428571422"/>
+        </scene>
+        <!--Lists-->
+        <scene sceneID="qbx-FH-3Ma">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ta3-YW-P1g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lists" id="gzJ-me-BL7">
+                        <imageReference key="image" image="star.fill" catalog="system" symbolScale="default"/>
+                        <imageReference key="selectedImage" image="star.fill" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2DW-Bn-XlI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NmG-pe-Ell"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5w3-8S-ft2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
